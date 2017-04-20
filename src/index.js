@@ -17,5 +17,7 @@ const render = Component => {
 render(Example)
 
 if (module.hot) {
-  module.hot.accept('./example', () => { render(Example) })
+  module.hot.accept('./example', () => {
+    render(Example);
+  });
 }

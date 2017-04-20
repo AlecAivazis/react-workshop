@@ -85,13 +85,6 @@ module.exports = {
     },
     plugins: plugins,
     devtool: devtool,
-    devServer: {
-      proxy: {
-        '/latex': {
-          target: "http://104.196.244.203"
-        }
-      },
-    }
 }
 
 
