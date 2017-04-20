@@ -12,7 +12,9 @@ var entry = [projectPaths.clientEntry]
 
 // the initial set of plugins
 var plugins = [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+        template: 'src/example.html'
+    }),
     new webpack.NamedModulesPlugin(),
     new webpack.EnvironmentPlugin({
       NODE_ENV: process.env.NODE_ENV || 'dev',
@@ -47,12 +49,6 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     // use source maps
     devtool = 'inline-source-map'
-
-    // add the webpack dev server config
-    entry = [
-        'webpack-dev-server/client?http://0.0.0.0:8080',
-        'webpack/hot/only-dev-server',
-    ].concat(entry)
 }
 
 // export webpack configuration object
