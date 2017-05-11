@@ -1,15 +1,14 @@
-import { dims } from 'client/styles'
 
 export default {
   container: {
-    marginBottom: 5 * dims.base,
+    marginBottom: 20,
   },
   examples: {
     display: 'flex',
     flexDirection: 'column',
   },
   title: {
-    marginBottom: dims.base,
+    marginBottom: 4,
     fontSize: 18,
   }
 }
