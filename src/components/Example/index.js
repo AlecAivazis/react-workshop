@@ -1,5 +1,6 @@
 // external imports
 import React from 'react'
+import PropTypes from 'prop-types'
 // local imports
 import styles from './styles'
 
@@ -19,12 +20,8 @@ const Example = ({ description, children }) => {
 }
 
 Example.propTypes = {
-    children: React.PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.element,
-        React.PropTypes.func,
-    ]),
-    description: React.PropTypes.string,
+    children: PropTypes.node,
+    description: PropTypes.string
 }
 
 export default Example

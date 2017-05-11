@@ -1,5 +1,6 @@
 // external imports
 import React from 'react'
+import PropTypes from 'prop-types'
 // local imports
 import styles from './styles'
 
@@ -16,11 +17,7 @@ const Workbench = ({ title, children, ...unused }) => (
 
 Workbench.propTypes = {
     title: React.PropTypes.string,
-    children: React.PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.element,
-        React.PropTypes.arrayOf(React.PropTypes.element),
-    ]),
+    children: React.PropTypes.node
 }
 
 export default Workbench

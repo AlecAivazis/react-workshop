@@ -1,30 +1,25 @@
 // external imports
 import React from 'react'
+import PropTypes from 'prop-types'
 // local imports
 import styles from './styles'
 
 const Example = ({ title, children }) => {
-    // if the child is a function, pass it the environment
-    const child = typeof children === 'function' ? children() : children
     return (
         <div style={styles.container}>
             <h1 style={styles.title}>
                 {title}
             </h1>
             <div style={styles.content}>
-                {child}
+                hello
             </div>
         </div>
     )
 }
 
 Example.propTypes = {
-    children: React.PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.element,
-        React.PropTypes.func,
-    ]),
-    title: React.PropTypes.string,
+    children: PropTypes.node,
+    title: PropTypes.string.isRequired
 }
 
 export default Example
