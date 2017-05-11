@@ -12,7 +12,7 @@ export default function findCategories(children) {
             .map(child => {
                 return {
                     title: child.props.title,
-                    blueprints: child.props.children
+                    blueprints: child.props.children,
                 }
             })
     )

@@ -1,13 +1,13 @@
 export default {
     container: {
-        display: 'flex'
+        display: 'flex',
     },
     tabContainer: {
         display: 'flex',
-        width: 300
+        width: 300,
     },
     workbench: {
         display: 'flex',
-        flexGrow: 1
-    }
+        flexGrow: 1,
+    },
 }

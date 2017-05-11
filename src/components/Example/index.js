@@ -21,7 +21,7 @@ const Example = ({ description, children }) => {
 
 Example.propTypes = {
     children: PropTypes.node,
-    description: PropTypes.string
+    description: PropTypes.string,
 }
 
 export default Example

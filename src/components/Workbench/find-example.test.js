@@ -23,7 +23,7 @@ describe('Workbench', function() {
             // the selected example state
             const selectedExample = {
                 category: 'C',
-                blueprint: "B",
+                blueprint: 'B',
                 example: 'E1',
             }
 

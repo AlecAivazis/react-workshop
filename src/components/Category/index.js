@@ -13,7 +13,11 @@ const Category = ({ title, blueprints, setFocus }) => {
             </h1>
             <div style={styles.content}>
                 {React.Children.map(blueprints, bp => (
-                    <Blueprint {...bp.props} category={title} setFocus={setFocus} />
+                    <Blueprint
+                        {...bp.props}
+                        category={title}
+                        setFocus={setFocus}
+                    />
                 ))}
             </div>
         </div>
@@ -22,7 +26,7 @@ const Category = ({ title, blueprints, setFocus }) => {
 
 Category.propTypes = {
     children: PropTypes.node,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
 }
 
 export default Category

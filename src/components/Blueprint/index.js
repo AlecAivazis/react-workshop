@@ -12,9 +12,12 @@ const Blueprint = ({ title, children, category, setFocus, ...unused }) => (
         <div style={styles.examples}>
             {React.Children.map(children, ({ props: example }) => (
                 <div
-                    onClick={
-                        () => setFocus({category, blueprint: title, example: example.title})
-                    }
+                    onClick={() =>
+                        setFocus({
+                            category,
+                            blueprint: title,
+                            example: example.title,
+                        })}
                 >
                     {example.title}
                 </div>
@@ -25,7 +28,7 @@ const Blueprint = ({ title, children, category, setFocus, ...unused }) => (
 
 Blueprint.propTypes = {
     title: React.PropTypes.string,
-    children: React.PropTypes.node
+    children: React.PropTypes.node,
 }
 
 export default Blueprint

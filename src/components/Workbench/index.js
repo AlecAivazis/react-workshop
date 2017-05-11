@@ -8,9 +8,9 @@ import findExample from './find-example'
 
 class Workbench extends React.Component {
     state = {
-        category: "form",
-        blueprint: "Buttons",
-        example: "with content",
+        category: 'form',
+        blueprint: 'Buttons',
+        example: 'with content',
     }
 
     render() {
@@ -24,7 +24,9 @@ class Workbench extends React.Component {
         return (
             <div style={{ ...styles.container, ...style }} {...unused}>
                 <div style={styles.tabContainer}>
-                    {categories.map(category => <Category {...category} setFocus={this._setFocus}/>)}
+                    {categories.map(category => (
+                        <Category {...category} setFocus={this._setFocus} />
+                    ))}
                 </div>
                 <div style={styles.workbench}>
                     {example}
