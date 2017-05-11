@@ -3,23 +3,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // local imports
 import styles from './styles'
+import Blueprint from '../Blueprint'
 
-const Example = ({ title, children }) => {
+const Category = ({ title, blueprints }) => {
     return (
         <div style={styles.container}>
             <h1 style={styles.title}>
                 {title}
             </h1>
             <div style={styles.content}>
-                hello
+                {React.Children.map(blueprints, bp => (
+                    <Blueprint {...bp.props} />
+                ))}
             </div>
         </div>
     )
 }
 
-Example.propTypes = {
+Category.propTypes = {
     children: PropTypes.node,
     title: PropTypes.string.isRequired
 }
 
-export default Example
+export default Category

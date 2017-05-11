@@ -11,14 +11,12 @@ describe('Workbench', function() {
             <Workbench>
                 <Category title="hello">
                     <Blueprint title="hello" />
-                </Category>
-                <Category title="hello2">
                     <Blueprint title="hello" />
                 </Category>
             </Workbench>
         )
 
         // make sure there is the right number of category tabs
-        expect(component.find(Category)).toHaveLength(2)
+        expect(component.find(Blueprint)).toHaveLength(2)
     })
 })

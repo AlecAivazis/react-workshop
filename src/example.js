@@ -3,17 +3,17 @@ import React from 'react'
 // local imports
 import { Example, Blueprint, Workbench, Category } from './components'
 
-export default function ButtonBlueprint() {
+export default function ExampleWorkbench() {
     return (
         <Workbench>
             <Category title="form">
                 <Blueprint title="Buttons">
-                    <Example description="with content">
+                    <Example title="with content">
                         <div>
                             hello
                         </div>
                     </Example>
-                    <Example description="without content">
+                    <Example title="without content">
                         <div>
                             hello
                         </div>
