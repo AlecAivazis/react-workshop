@@ -4,7 +4,7 @@ export default {
     },
     tabContainer: {
         display: 'flex',
-        width: 200
+        width: 300
     },
     workbench: {
         display: 'flex',

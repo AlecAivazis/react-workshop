@@ -10,12 +10,12 @@ export default function ExampleWorkbench() {
                 <Blueprint title="Buttons">
                     <Example title="with content">
                         <div>
-                            hello
+                            hello1
                         </div>
                     </Example>
                     <Example title="without content">
                         <div>
-                            hello
+                            hello2
                         </div>
                     </Example>
                 </Blueprint>

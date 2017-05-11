@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import styles from './styles'
 import Blueprint from '../Blueprint'
 
-const Category = ({ title, blueprints }) => {
+const Category = ({ title, blueprints, setFocus }) => {
     return (
         <div style={styles.container}>
             <h1 style={styles.title}>
@@ -13,7 +13,7 @@ const Category = ({ title, blueprints }) => {
             </h1>
             <div style={styles.content}>
                 {React.Children.map(blueprints, bp => (
-                    <Blueprint {...bp.props} />
+                    <Blueprint {...bp.props} category={title} setFocus={setFocus} />
                 ))}
             </div>
         </div>
