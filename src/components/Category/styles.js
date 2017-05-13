@@ -1,3 +1,11 @@
+import { blue400 } from 'styles'
+
+const blueprint = {
+    marginBottom: 12,
+    textTransform: 'capitalize',
+    cursor: 'pointer',
+}
+
 export default {
     container: {
         marginBottom: 4
@@ -12,7 +20,10 @@ export default {
         marginLeft: 28,
     },
     blueprint: {
-        marginBottom: 12,
-        textTransform: 'capitalize',
+        ...blueprint,
+    },
+    selectedBlueprint: {
+        ...blueprint,
+        color: blue400,
     },
 }

@@ -9,6 +9,7 @@ const Blueprint = ({ style, title, children, category, setFocus, ...unused }) =>
         <h1 style={styles.title}>
             {title}
         </h1>
+        {children}
     </div>
 )
 

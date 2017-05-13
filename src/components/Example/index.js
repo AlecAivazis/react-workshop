@@ -3,17 +3,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // local imports
 import styles from './styles'
+import Source from './Source'
 
-const Example = ({ description, children }) => {
+const Example = ({ title, children }) => {
     // if the child is a function, pass it the environment
     const child = typeof children === 'function' ? children() : children
     return (
         <div style={styles.container}>
-            <div style={styles.description}>
-                {description}
+            <div style={styles.title}>
+                {title}
             </div>
             <div style={styles.content}>
-                {child}
+                <div>
+                    {child}
+                </div>
+                <Source style={styles.example}>
+                    hello
+                </Source>
             </div>
         </div>
     )
@@ -21,7 +27,7 @@ const Example = ({ description, children }) => {
 
 Example.propTypes = {
     children: PropTypes.node,
-    description: PropTypes.string,
+    title: PropTypes.string,
 }
 
 export default Example
