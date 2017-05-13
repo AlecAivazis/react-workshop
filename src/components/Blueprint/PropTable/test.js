@@ -3,7 +3,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { mount } from 'enzyme'
 // local imports
-import PropTable, { PropTypeNameMap } from '.'
+import PropTable from '.'
+import { PropTypeNameMap } from './get-properties'
 import EmptyState from './Empty'
 
 describe('PropTable', function() {
@@ -49,6 +50,15 @@ describe('PropTable', function() {
         // and the rest should be not-required
         ).map(ele => ele.childAt(0).text())).toHaveLength(Object.values(Child.propTypes).length - 1)
     })
+
+    test('shows default values for props', () => {
+        // find the row with a required field
+        expect(wrapper.find('tbody > tr').filterWhere(
+            // we can assume the default column is fourth
+            ele => ele.childAt(3).text() === 'hello'
+        // there should be one required row
+        )).toHaveLength(1)
+    })
 })
 
 // a list of primitive types
@@ -68,24 +78,28 @@ const NoProp = () => <div />
 const Child = () => <span />
 // we should be able to render any type of prop
 Child.propTypes = {
-  array: PropTypes.array,
-  bool: PropTypes.bool,
-  func: PropTypes.func,
-  number: PropTypes.number,
-  object: PropTypes.object,
-  string: PropTypes.string,
-  symbol: PropTypes.symbol,
-  node: PropTypes.node,
-  element: PropTypes.element,
-  instanceOf: PropTypes.instanceOf(Child),
-  enum: PropTypes.oneOf(['News', 'Photos']),
-  oneOfType: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  objectOf: PropTypes.objectOf(PropTypes.number),
-  shape: PropTypes.shape({
-    color: PropTypes.string,
-    fontSize: PropTypes.number
-  }),
-  arrayOf: PropTypes.arrayOf(PropTypes.number),
-  required: PropTypes.arrayOf(PropTypes.number).isRequired,
-  any: PropTypes.any,
+    array: PropTypes.array,
+    bool: PropTypes.bool,
+    func: PropTypes.func,
+    number: PropTypes.number,
+    object: PropTypes.object,
+    string: PropTypes.string,
+    symbol: PropTypes.symbol,
+    node: PropTypes.node,
+    element: PropTypes.element,
+    instanceOf: PropTypes.instanceOf(Child),
+    enum: PropTypes.oneOf(['News', 'Photos']),
+    oneOfType: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    objectOf: PropTypes.objectOf(PropTypes.number),
+    shape: PropTypes.shape({
+        color: PropTypes.string,
+        fontSize: PropTypes.number
+    }),
+    arrayOf: PropTypes.arrayOf(PropTypes.number),
+    required: PropTypes.arrayOf(PropTypes.number).isRequired,
+    any: PropTypes.any,
+}
+
+Child.defaultProps = {
+    string: 'hello',
 }

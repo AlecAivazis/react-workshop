@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 // local imports
 import EmptyState from './Empty'
 import styles from './styles'
+import getProperties from './get-properties'
 
 const PropTable = ({children: component, style, ...unused}) => {
     // if there are no prop types defined on the component
@@ -13,21 +14,8 @@ const PropTable = ({children: component, style, ...unused}) => {
             <EmptyState style={style} {...unused}/>
         )
     }
-    // the list of propTypes in this component
-    const props = []
 
-    // for each prop on the component
-    for (const propName of Object.keys(component.propTypes)) {
-        // the actual prop
-        const prop = component.propTypes[propName]
-        // add the prop description to the list
-        props.push({
-            propName,
-            propType: PropTypeNameMap.get(prop) || 'other',
-            required: prop.isRequired === undefined ? 'yes' : 'no',
-        })
-    }
-
+    // we have prop types for the component so render the summary table
     return (
         <table style={{...styles.container, ...style}} {...unused}>
             <thead>
@@ -35,39 +23,22 @@ const PropTable = ({children: component, style, ...unused}) => {
                     <th>property</th>
                     <th>type</th>
                     <th>required</th>
+                    <th>default</th>
                 </tr>
             </thead>
             <tbody>
-                {props.map((prop, i) => (
+                {getProperties(component).map((prop, i) => (
                     <tr key={i}>
                         <td>{prop.propName}</td>
                         <td>{prop.propType}</td>
                         <td>{prop.required}</td>
+                        <td>{prop.defaultValue || '-'}</td>
                     </tr>
                 ))}
             </tbody>
         </table>
     )
 }
-
-
-// build a map from proptype to name
-export const PropTypeNameMap = new Map()
-// there needs to be an empty for each possible prop type
-for (const typeName in PropTypes) {
-  // make sure we dont get
-  if (!PropTypes[typeName]) {
-    continue
-  }
-
-  // the type object
-  const type = PropTypes[typeName]
-  // refer to types by their name
-  PropTypeNameMap.set(type, typeName)
-  // refer to required types by the name of the base type
-  PropTypeNameMap.set(type.isRequired, typeName)
-}
-
 
 
 export default PropTable
