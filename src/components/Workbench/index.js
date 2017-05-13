@@ -23,11 +23,12 @@ class Workbench extends React.Component {
         return (
             <div style={{ ...styles.container, ...style }} {...unused}>
                 <div style={styles.tabContainer}>
-                    {categories.map(category => (
+                    {categories.map((category, i) => (
                         <Category
                             {...category}
                             setFocus={this._setFocus}
                             selectedState={this.state}
+                            key={i}
                         />
                     ))}
                 </div>

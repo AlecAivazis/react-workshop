@@ -27,7 +27,7 @@ const Example = ({ title, children, exampleComponent, style, ...unused }) => {
 }
 
 Example.propTypes = {
-    children: PropTypes.node,
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     title: PropTypes.string,
 }
 
