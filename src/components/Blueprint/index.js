@@ -4,14 +4,11 @@ import PropTypes from 'prop-types'
 // local imports
 import styles from './styles'
 
-const Blueprint = ({ title, children, category, setFocus, ...unused }) => (
-    <div {...unused} style={styles.container}
-        onClick={() =>
-                        setFocus({
-                            category,
-                            blueprint: title,
-                        })}>
+const Blueprint = ({ style, title, children, category, setFocus, ...unused }) => (
+    <div {...unused} style={{...styles.container, ...style}}>
+        <h1 style={styles.title}>
             {title}
+        </h1>
     </div>
 )
 

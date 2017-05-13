@@ -1,13 +1,11 @@
 export default {
     container: {
-        marginBottom: 20,
-    },
-    examples: {
+        padding: 16,
+        boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',
     },
     title: {
-        marginBottom: 4,
-        fontSize: 18,
+       margin: 0,
     },
 }

@@ -1,1 +1,3 @@
-export const primaryFont = "'Noto Sans', sans-serif"
+export const primaryFont = {
+    fontFamily: "'Noto Sans', sans-serif",
+}

@@ -1,6 +1,6 @@
 export default {
     container: {
-        marginBottom: 16
+        marginBottom: 4
     },
     title: {
         textTransform: 'capitalize',
@@ -10,5 +10,8 @@ export default {
     },
     content: {
         marginLeft: 28,
-    }
+    },
+    blueprint: {
+        marginBottom: 12,
+    },
 }

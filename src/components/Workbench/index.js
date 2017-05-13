@@ -19,7 +19,7 @@ class Workbench extends React.Component {
         const categories = findCategories(children)
         // find the example to show
         const blueprint = findBlueprint(children, this.state)
-        console.log(blueprint)
+
         return (
             <div style={{ ...styles.container, ...style }} {...unused}>
                 <div style={styles.tabContainer}>

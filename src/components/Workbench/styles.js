@@ -18,10 +18,11 @@ export default {
         padding: 16,
         boxSizing: 'border-box',
         color: white,
-        fontFamily: primaryFont
+        ...primaryFont
     },
     workbench: {
         display: 'flex',
+        flexDirection: 'column',
         flexGrow: 1
     }
 }

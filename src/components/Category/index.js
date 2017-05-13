@@ -12,12 +12,16 @@ const Category = ({ title, blueprints, setFocus }) => {
                 {title}
             </h1>
             <div style={styles.content}>
-                {React.Children.map(blueprints, bp => (
-                    <Blueprint
-                        {...bp.props}
-                        category={title}
-                        setFocus={setFocus}
-                    />
+                {React.Children.map(blueprints, ({props}) => (
+                    <div
+                        style={styles.blueprint}
+                        onClick={() => setFocus({
+                            title,
+                            blueprint: props.title,
+                        })}
+                    >
+                        {props.title}
+                    </div>
                 ))}
             </div>
         </div>
