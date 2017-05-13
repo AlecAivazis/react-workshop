@@ -34,7 +34,7 @@ describe('PropTable', function() {
         }
     })
 
-    test.only('indicates the prop as required when marked', () => {
+    test('indicates the prop as required when marked', () => {
         // find the required rows
         expect(wrapper.find('tbody > tr').filterWhere(
             // we can assume the required column is third
