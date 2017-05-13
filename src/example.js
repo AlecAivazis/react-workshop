@@ -7,7 +7,7 @@ export default function ExampleWorkbench() {
     return (
         <Workbench>
             <Category title="form">
-                <Blueprint title="input">
+                <Blueprint title="Input">
                     <Example title="with content">
                         <div>
                             input
@@ -29,15 +29,15 @@ export default function ExampleWorkbench() {
                     </Example>
                 </Blueprint>
             </Category>
-            <Category title="Buttons">
-                <Blueprint title="Primary">
+            <Category title="buttons">
+                <Blueprint title="primary">
                     <Example title="with content">
                         <div>
                             hello1
                         </div>
                     </Example>
                 </Blueprint>
-                <Blueprint title="Secondary">
+                <Blueprint title="secondary">
                     <Example title="with content">
                         <div>
                             hello1
@@ -45,7 +45,7 @@ export default function ExampleWorkbench() {
                     </Example>
                 </Blueprint>
             </Category>
-            <Category title="Icons">
+            <Category title="icons">
                 <Blueprint title="Low-Fi">
                     <Example title="with content">
                         <div>

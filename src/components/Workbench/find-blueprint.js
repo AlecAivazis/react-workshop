@@ -10,11 +10,8 @@ export default function findBlueprint(
     // the list of blueprints to look through
     let blueprints = React.Children
         .toArray(children)
-        .find(child => child.type.name === 'Blueprint')
-    // the list of examples to look through
-    let examples = React.Children
-        .toArray(children)
-        .find(child => child.type.name === 'Example')
+        .filter(child => child.type.name === 'Blueprint')
+
     // if we have a specific category to look for
     if (category) {
         const cMatch = React.Children
@@ -29,12 +26,10 @@ export default function findBlueprint(
             blueprints = React.Children.toArray(cMatch.props.children)
         }
     }
-    // if we have blueprints to look through
-    if (blueprints && blueprints.length > 0) {
-        // look for the matching blueprint
-        return blueprints.find(
-            bp => bp.type.name === 'Blueprint' && bp.props.title === blueprint
-        )
-    }
+
+    // look for the matching blueprint
+    return blueprints.find(
+        bp => bp.type.name === 'Blueprint' && bp.props.title === blueprint
+    )
 
 }

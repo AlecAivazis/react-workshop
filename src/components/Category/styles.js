@@ -13,5 +13,6 @@ export default {
     },
     blueprint: {
         marginBottom: 12,
+        textTransform: 'capitalize',
     },
 }

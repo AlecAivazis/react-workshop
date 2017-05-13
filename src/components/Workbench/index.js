@@ -8,8 +8,8 @@ import findBlueprint from './find-blueprint'
 
 class Workbench extends React.Component {
     state = {
-        category: 'form',
-        blueprint: 'input',
+        category: '',
+        blueprint: '',
     }
 
     render() {

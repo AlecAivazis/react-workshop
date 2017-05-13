@@ -16,7 +16,7 @@ const Category = ({ title, blueprints, setFocus }) => {
                     <div
                         style={styles.blueprint}
                         onClick={() => setFocus({
-                            title,
+                            category: title,
                             blueprint: props.title,
                         })}
                     >
