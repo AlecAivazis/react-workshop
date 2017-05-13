@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { mount } from 'enzyme'
 // local imports
-import PropTable, { PropTypesMap } from '.'
+import PropTable, { PropTypeNameMap } from '.'
 import EmptyState from './Empty'
 
 describe('PropTable', function() {
@@ -26,24 +26,33 @@ describe('PropTable', function() {
         // treat each primitive the same
         for (const type of primitives) {
             // make sure there is a row with the right propType value
-            expect(wrapper.find('tbody').findWhere(ele => {
-                // we're looking for a table row
-                if (ele.type() !== 'tr') {
-                    // this isn't the droid we're looking for
-                    return false
-                }
-
-                //  make sure we can find a td with the right type name
-                return ele.find('td').findWhere(ele => ele.text() === PropTypesMap.get(type)).length > 1
-            // we should have found something
-            })).toHaveLength(1)
+            expect(
+                wrapper.find('tbody > tr').filterWhere(
+                    row => row.childAt(1).text() === PropTypeNameMap.get(type)
+                )
+            ).toHaveLength(1)
         }
+    })
+
+    test.only('indicates the prop as required when marked', () => {
+        // find the required rows
+        expect(wrapper.find('tbody > tr').filterWhere(
+            // we can assume the required column is third
+            ele => ele.childAt(2).text() === 'yes'
+        // there should be one required row
+        ).map(ele => ele.childAt(0).text())).toHaveLength(1)
+
+        // find the non-required rows
+        expect(wrapper.find('tbody > tr').filterWhere(
+            // we can assume the required column is third
+            ele => ele.childAt(2).text() === 'no'
+        // and the rest should be not-required
+        ).map(ele => ele.childAt(0).text())).toHaveLength(Object.values(Child.propTypes).length - 1)
     })
 })
 
 // a list of primitive types
 const primitives = [
-    PropTypes.array,
     PropTypes.bool,
     PropTypes.func,
     PropTypes.number,
@@ -71,13 +80,12 @@ Child.propTypes = {
   instanceOf: PropTypes.instanceOf(Child),
   enum: PropTypes.oneOf(['News', 'Photos']),
   oneOfType: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  arrayOf: PropTypes.arrayOf(PropTypes.number),
   objectOf: PropTypes.objectOf(PropTypes.number),
   shape: PropTypes.shape({
     color: PropTypes.string,
     fontSize: PropTypes.number
   }),
-  required: PropTypes.string.isRequired,
+  arrayOf: PropTypes.arrayOf(PropTypes.number),
+  required: PropTypes.arrayOf(PropTypes.number).isRequired,
   any: PropTypes.any,
-  customProp: (props, propName, componentName) => {},
 }
