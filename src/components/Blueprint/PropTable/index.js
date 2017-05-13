@@ -15,24 +15,27 @@ const PropTable = ({children: component, style, ...unused}) => {
         )
     }
 
+    // the description of the component props
+    const props = getProperties(component)
+
     // we have prop types for the component so render the summary table
     return (
-        <table style={{...styles.container, ...style}} {...unused}>
+        <table style={{...styles.table, ...style}} {...unused}>
             <thead>
-                <tr>
-                    <th>property</th>
-                    <th>type</th>
-                    <th>required</th>
-                    <th>default</th>
+                <tr style={styles.row}>
+                    <th style={styles.header}>property</th>
+                    <th style={styles.header}>type</th>
+                    <th style={styles.header}>required</th>
+                    <th style={styles.header}>default</th>
                 </tr>
             </thead>
             <tbody>
-                {getProperties(component).map((prop, i) => (
-                    <tr key={i}>
-                        <td>{prop.propName}</td>
-                        <td>{prop.propType}</td>
-                        <td>{prop.required}</td>
-                        <td>{prop.defaultValue || '-'}</td>
+                {props.map((prop, i) => (
+                    <tr style={styles.row} key={i}>
+                        <td style={styles.element}>{prop.propName}</td>
+                        <td style={styles.element}>{prop.propType || 'other'}</td>
+                        <td style={styles.element}>{prop.required || 'no'}</td>
+                        <td style={styles.element}>{prop.defaultValue || '-'}</td>
                     </tr>
                 ))}
             </tbody>

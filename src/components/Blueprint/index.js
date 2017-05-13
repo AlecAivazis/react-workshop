@@ -10,9 +10,15 @@ const Blueprint = ({ style, title, children, category, setFocus, component: Comp
         <h1 style={styles.title}>
             {title}
         </h1>
+        <h2 style={styles.subheader}>
+            Prop Types
+        </h2>
         <PropTable>
             {Component}
         </PropTable>
+        <h2 style={styles.subheader}>
+            Examples
+        </h2>
         {children}
     </div>
 )

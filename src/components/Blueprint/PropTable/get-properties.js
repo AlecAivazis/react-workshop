@@ -29,7 +29,7 @@ export default component => {
         // add the prop description to the list
         props[propName] = {
             propName,
-            propType: PropTypeNameMap.get(prop) || 'other',
+            propType: PropTypeNameMap.get(prop),
             required: prop.isRequired === undefined ? 'yes' : 'no',
         }
     }
