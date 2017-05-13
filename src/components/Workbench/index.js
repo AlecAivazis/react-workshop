@@ -4,13 +4,12 @@ import React from 'react'
 import Category from '../Category'
 import styles from './styles'
 import findCategories from './find-categories'
-import findExample from './find-example'
+import findBlueprint from './find-blueprint'
 
 class Workbench extends React.Component {
     state = {
         category: 'form',
-        blueprint: 'Buttons',
-        example: 'with content',
+        blueprint: 'input',
     }
 
     render() {
@@ -19,8 +18,8 @@ class Workbench extends React.Component {
         // the categories for the workbench
         const categories = findCategories(children)
         // find the example to show
-        const example = findExample(children, this.state)
-
+        const blueprint = findBlueprint(children, this.state)
+        console.log(blueprint)
         return (
             <div style={{ ...styles.container, ...style }} {...unused}>
                 <div style={styles.tabContainer}>
@@ -29,7 +28,7 @@ class Workbench extends React.Component {
                     ))}
                 </div>
                 <div style={styles.workbench}>
-                    {example}
+                    {blueprint}
                 </div>
             </div>
         )

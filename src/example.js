@@ -7,19 +7,61 @@ export default function ExampleWorkbench() {
     return (
         <Workbench>
             <Category title="form">
-                <Blueprint title="Buttons">
+                <Blueprint title="input">
+                    <Example title="with content">
+                        <div>
+                            input
+                        </div>
+                    </Example>
+                </Blueprint>
+                <Blueprint title="Select">
                     <Example title="with content">
                         <div>
                             hello1
                         </div>
                     </Example>
-                    <Example title="without content">
+                </Blueprint>
+                <Blueprint title="Checkbox">
+                    <Example title="with content">
                         <div>
-                            hello2
+                            hello1
                         </div>
                     </Example>
                 </Blueprint>
             </Category>
+            <Category title="Buttons">
+                <Blueprint title="Primary">
+                    <Example title="with content">
+                        <div>
+                            hello1
+                        </div>
+                    </Example>
+                </Blueprint>
+                <Blueprint title="Secondary">
+                    <Example title="with content">
+                        <div>
+                            hello1
+                        </div>
+                    </Example>
+                </Blueprint>
+            </Category>
+            <Category title="Icons">
+                <Blueprint title="Low-Fi">
+                    <Example title="with content">
+                        <div>
+                            hello1
+                        </div>
+                    </Example>
+                </Blueprint>
+                <Blueprint title="Hi-Fi">
+                    <Example title="with content">
+                        <div>
+                            hello1
+                        </div>
+                    </Example>
+                </Blueprint>
+            </Category>
+
         </Workbench>
     )
 }

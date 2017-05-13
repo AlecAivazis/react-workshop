@@ -3,9 +3,9 @@ import React from 'react'
 
 // findExample is responsiblie for retrieving the example component
 // that matches the current selection
-export default function findExample(
+export default function findBlueprint(
     children,
-    { category, blueprint, example }
+    { category, blueprint }
 ) {
     // the list of blueprints to look through
     let blueprints = React.Children
@@ -31,19 +31,10 @@ export default function findExample(
     }
     // if we have blueprints to look through
     if (blueprints && blueprints.length > 0) {
-        // look for a matching blueprint
-        const bpMatch = blueprints.find(
+        // look for the matching blueprint
+        return blueprints.find(
             bp => bp.type.name === 'Blueprint' && bp.props.title === blueprint
         )
-
-        // if we found a matching blueprint
-        if (bpMatch) {
-            // use its examples
-            examples = React.Children.toArray(bpMatch.props.children)
-        }
     }
 
-    return React.Children
-        .toArray(examples)
-        .find(ex => ex.props.title === example && ex.type.name === 'Example')
 }

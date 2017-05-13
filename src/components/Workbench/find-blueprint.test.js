@@ -3,7 +3,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 // local imports
 import { Workbench, Category, Example, Blueprint } from '..'
-import findExample from './find-example'
+import findBlueprint from './find-blueprint'
 
 describe('Workbench', function() {
     describe('findExample', () => {
@@ -24,23 +24,20 @@ describe('Workbench', function() {
             const selectedExample = {
                 category: 'C',
                 blueprint: 'B',
-                example: 'E1',
             }
 
             // try to find the categories in the workbench
-            const example = findExample(
+            const example = findBlueprint(
                 component.props().children,
-                selectedExample
+                selectedExample,
             )
-
-            console.log(example)
 
             // make sure we got a react element back
             expect(React.isValidElement(example)).toBeTruthy()
             // make sure we got an example back
-            expect(example.type.name).toEqual('Example')
+            expect(example.type.name).toEqual('Blueprint')
             // make sure we found the right example
-            expect(example.props.children).toEqual('hello')
+            expect(example.props.title).toEqual('B')
         })
     })
 })

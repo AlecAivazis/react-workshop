@@ -5,24 +5,13 @@ import PropTypes from 'prop-types'
 import styles from './styles'
 
 const Blueprint = ({ title, children, category, setFocus, ...unused }) => (
-    <div {...unused} style={styles.container}>
-        <h2 style={styles.title}>
-            {title}
-        </h2>
-        <div style={styles.examples}>
-            {React.Children.map(children, ({ props: example }) => (
-                <div
-                    onClick={() =>
+    <div {...unused} style={styles.container}
+        onClick={() =>
                         setFocus({
                             category,
                             blueprint: title,
-                            example: example.title,
-                        })}
-                >
-                    {example.title}
-                </div>
-            ))}
-        </div>
+                        })}>
+            {title}
     </div>
 )
 

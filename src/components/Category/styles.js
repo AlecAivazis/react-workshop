@@ -1,9 +1,14 @@
 export default {
     container: {
-        marginBottom: 10,
-        paddingBottom: 5,
+        marginBottom: 16
     },
     title: {
         textTransform: 'capitalize',
+        marginBottom: 16,
+        marginTop: 0,
+        fontSize: 22,
     },
+    content: {
+        marginLeft: 28,
+    }
 }
