@@ -14,7 +14,7 @@ export default {
         marginLeft: 20,
         marginRight: 20,
     },
-    example: {
+    source: {
         backgroundColor: white,
         padding: 12,
         marginTop: 20,

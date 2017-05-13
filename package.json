@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "react": "^15.5.4",
+    "react-addons-create-fragment": "^15.5.4",
     "react-dom": "^15.5.4"
   },
   "jest": {

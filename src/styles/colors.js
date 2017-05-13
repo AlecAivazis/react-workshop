@@ -1,5 +1,5 @@
 export const white = '#f8f8f8'
 export const grey100 = '#ebebeb'
-export const grey400 = '#575757'
+export const grey400 = '#494949'
 export const grey800 = '#3F3F3F'
 export const blue400 = '#4B88DA'

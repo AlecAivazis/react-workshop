@@ -3,6 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // local imports
 import styles from './styles'
+import CategoryTab from './Tab'
 import Blueprint from '../Blueprint'
 
 const Category = ({ title, blueprints, setFocus, selectedState }) => {
@@ -20,15 +21,20 @@ const Category = ({ title, blueprints, setFocus, selectedState }) => {
                                         && selectedState.blueprint === props.title
 
                     return (
-                        <div
-                            style={selected ? styles.selectedBlueprint : styles.blueprint}
+                        <CategoryTab
+                            bp={{props}}
+                            selected={selected}
                             onClick={() => setFocus({
                                 category: title,
                                 blueprint: props.title,
                             })}
                         >
-                            {props.title}
-                        </div>
+                            <div
+                                style={selected ? styles.selectedBlueprint : styles.blueprint}
+                            >
+                                {props.title}
+                            </div>
+                        </CategoryTab>
                     )
                 })}
             </div>

@@ -5,20 +5,21 @@ import PropTypes from 'prop-types'
 import styles from './styles'
 import Source from './Source'
 
-const Example = ({ title, children }) => {
+const Example = ({ title, children, exampleComponent, style, ...unused }) => {
     // if the child is a function, pass it the environment
     const child = typeof children === 'function' ? children() : children
+
     return (
-        <div style={styles.container}>
+        <div style={{...styles.container, ...style}}>
             <div style={styles.title}>
                 {title}
             </div>
             <div style={styles.content}>
-                <div>
+                <div style={styles.example}>
                     {child}
                 </div>
-                <Source style={styles.example}>
-                    hello
+                <Source style={styles.source}>
+                    {child}
                 </Source>
             </div>
         </div>
