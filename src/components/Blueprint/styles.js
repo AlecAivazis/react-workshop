@@ -12,6 +12,7 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         flexGrow: 1,
+        overflowY: 'auto',
     },
     title: {
        ...primaryFont,

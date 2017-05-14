@@ -3,11 +3,7 @@ import { grey100, grey800, white, primaryFont } from 'styles'
 export default {
     container: {
         display: 'flex',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
+        flexGrow: 1,
         backgroundColor: grey100
     },
     tabContainer: {
@@ -23,6 +19,7 @@ export default {
     workbench: {
         display: 'flex',
         flexDirection: 'column',
-        flexGrow: 1
+        flexGrow: 1,
+        overflow: 'hidden',
     }
 }
