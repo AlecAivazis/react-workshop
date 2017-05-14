@@ -32,7 +32,10 @@ export const WithChildren = ({name, children: node, ...unused}) => (
 
 export const NoChildren = ({name, children: node, ...unused}) => (
     <div {...unused}>
-        no children
+        <LessThan/>
+        {name}
+        \
+        <GreaterThan/>
     </div>
 )
 
