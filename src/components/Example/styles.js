@@ -2,11 +2,11 @@ import { grey400, primaryFont, white } from 'styles'
 
 export default {
     container: {
-        marginBottom: 10,
+        marginBottom: 32,
         paddingBottom: 5,
     },
     title: {
-        marginBottom: 20,
+        marginBottom: 24,
         color: grey400,
         ...primaryFont,
     },
@@ -17,6 +17,6 @@ export default {
     source: {
         backgroundColor: white,
         padding: 12,
-        marginTop: 20,
+        marginTop: 16,
     }
 }
