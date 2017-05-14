@@ -14,24 +14,19 @@ export const WithChildren = ({name, children: node, ...unused}) => (
             <LessThan/>
             {name}
             <Props>{node}</Props>
-            {typeof node.props.children  === 'undefined' && '/'}
             <GreaterThan/>
         </div>
-        {node.props.children && (
-            <div>
-                {React.Children.map(node.props.children, child => (
-                    <div style={styles.children}>
-                        <Node>{child}</Node>
-                    </div>
-                ))}
-                <div>
-                    <LessThan/>
-                    /
-                    {name}
-                    <GreaterThan/>
-                </div>
+        {React.Children.map(node.props.children, child => (
+            <div style={styles.children}>
+                <Node>{child}</Node>
             </div>
-        )}
+        ))}
+        <div>
+            <LessThan/>
+            /
+            {name}
+            <GreaterThan/>
+        </div>
     </div>
 )
 
