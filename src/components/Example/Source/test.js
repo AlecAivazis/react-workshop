@@ -48,6 +48,7 @@ describe('Source', function() {
             <div>
                 <div>hello</div>
                 <div>world</div>
+                <span onClick={true}/>
             </div>
         )
 
@@ -60,5 +61,9 @@ describe('Source', function() {
 
         // there are 3 nodes with children (each div has a child)
         expect(wrapper.find(WithChildren)).toHaveLength(3)
+        // two text nodes
+        expect(wrapper.find(Text)).toHaveLength(2)
+        // and one node without children
+        expect(wrapper.find(NoChildren)).toHaveLength(1)
     })
 })
