@@ -9,7 +9,7 @@ describe('Source', () => {
     describe('PropValue', () => {
         test('renders numbers correctly', () => {
             const wrapper = shallow(
-                <PropValue>1</PropValue>
+                <PropValue>{1}</PropValue>
             )
 
             expect(wrapper.text()).toContain("{1}")
@@ -17,7 +17,7 @@ describe('Source', () => {
 
         test('renders strings correctly', () => {
             const wrapper = shallow(
-                <PropValue>hello</PropValue>
+                <PropValue>{'hello'}</PropValue>
             )
 
             expect(wrapper.text()).toContain("\"hello\"")
@@ -44,7 +44,7 @@ describe('Source', () => {
                 <PropValue>{[1,2,3]}</PropValue>
             )
 
-            expect(wrapper.text()).toContain("{[1, 2, 3]}")
+            expect(wrapper.text()).toContain("{[1,2,3]}")
         })
 
         test('renders named functions correctly', () => {

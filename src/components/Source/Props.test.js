@@ -16,7 +16,7 @@ describe('Source', () => {
             )
 
             // make sure there is something resembling the prop string
-            expect(wrapper.text()).toContain('hover={<PropValue />}')
+            expect(wrapper.text()).toContain('hover=<PropValue />')
             // make sure there is a prop value component
             const value = wrapper.find(PropValue)
             // with the right value

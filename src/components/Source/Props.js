@@ -34,9 +34,7 @@ const Props = ({children: node}) => {
                     </span>
                     <span>
                         =
-                        {'{'}
                         <PropValue>{props[name]}</PropValue>
-                        {'}'}
                     </span>
                 </span>
             ))}
