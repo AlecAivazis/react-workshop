@@ -22,7 +22,7 @@ export default function ExampleWorkbench() {
                         </Button>
                     </Example>
                     <Example title="disabled">
-                        <Button foo={() => {}}>
+                        <Button disabled={true}>
                             hello
                         </Button>
                     </Example>
