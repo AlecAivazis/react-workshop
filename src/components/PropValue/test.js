@@ -84,7 +84,15 @@ describe('Source', () => {
             )
 
             expect(wrapper.text()).toContain(JSON.stringify(child))
+        })
 
+        test('can toggle braces', () => {
+            // try rendering the value without braces
+            const wrapper = mount(
+                <PropValue showBraces={false}>{1}</PropValue>
+            )
+
+            expect(wrapper.text()).toEqual("1")
         })
     })
 })
