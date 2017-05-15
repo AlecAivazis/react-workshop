@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // local imports
 import styles from './styles'
-import PropTable from './PropTable'
+import PropTable from '../PropTable'
 
 const Blueprint = ({ style, title, children, category, setFocus, component: Component, ...unused }) => (
     <div {...unused} style={{...styles.container, ...style}}>
