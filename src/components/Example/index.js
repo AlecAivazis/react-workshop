@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // local imports
 import styles from './styles'
-import Source from './Source'
+import Source from '../Source'
 
 const Example = ({ title, children, exampleComponent, style, ...unused }) => {
     // if the child is a function, pass it the environment

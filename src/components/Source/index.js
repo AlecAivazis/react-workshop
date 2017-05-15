@@ -12,7 +12,7 @@ export const WithChildren = ({name, children: node, ...unused}) => (
     <div {...unused}>
         <div>
             <LessThan/>
-            {name}
+            {`${name} `}
             <Props>{node}</Props>
             <GreaterThan/>
         </div>

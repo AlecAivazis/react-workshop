@@ -15,14 +15,14 @@ export default function ExampleWorkbench() {
     return (
         <Workbench>
             <Category title="Form">
-                <Blueprint title="Input" component={Button}>
+                <Blueprint title="Button" component={Button}>
                     <Example title="default">
                         <Button>
                             hello
                         </Button>
                     </Example>
                     <Example title="disabled">
-                        <Button>
+                        <Button foo={() => {}}>
                             hello
                         </Button>
                     </Example>
