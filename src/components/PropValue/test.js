@@ -41,10 +41,18 @@ describe('Source', () => {
 
         test('renders arrays correctly', () => {
             const wrapper = shallow(
-                <PropValue>{[1,2,3]}</PropValue>
+                <PropValue>{[1,"asdf"]}</PropValue>
             )
 
-            expect(wrapper.text()).toContain("{[1,2,3]}")
+            expect(wrapper.text()).toContain("{[1, \"asdf\"]}")
+        })
+
+        test('only renders the first 3 elements of an array', () => {
+            const wrapper = shallow(
+                <PropValue>{[1,"asdf",3, 4]}</PropValue>
+            )
+
+            expect(wrapper.text()).toContain("{[1, \"asdf\", 3, ...]}")
         })
 
         test('renders named functions correctly', () => {
@@ -66,11 +74,11 @@ describe('Source', () => {
             )
 
             // make sure we wrapped a node in braces
-            expect(mount(<PropValue>{Component}</PropValue>).text()).toEqual('{<Node />}')
+            expect(mount(<PropValue>{Component}</PropValue>).text()).toEqual('{<Foo />}')
 
             // make sure we rendered a node
-            expect(wrapper.find(Node)).toHaveLength(1)
-            expect(wrapper.find(Node).props().children).toEqual(Component)
+            expect(wrapper.find(PropValue)).toHaveLength(1)
+            expect(wrapper.find(PropValue).props().children).toEqual(Component)
         })
 
         test('renders objects as jsonified strings', () => {
@@ -83,7 +91,7 @@ describe('Source', () => {
                 <PropValue>{child}</PropValue>
             )
 
-            expect(wrapper.text()).toContain(JSON.stringify(child))
+            expect(wrapper.text()).toContain('{foo: "bar"}')
         })
 
         test('can toggle braces', () => {
