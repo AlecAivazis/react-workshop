@@ -3,32 +3,36 @@ import React from 'react'
 // local imports
 import Props from './Props'
 import styles from './styles'
+import PropValue from '../PropValue'
 
 const LessThan = () => <span>&lt;</span>
 const GreaterThan = () => <span>&gt;</span>
 const Code = ({style, ...unused}) => <div style={{...styles.code, ...style}} />
 
-export const WithChildren = ({name, children: node, ...unused}) => (
-    <div {...unused}>
-        <div>
-            <LessThan/>
-            {name}
-            <Props>{node}</Props>
-            <GreaterThan/>
-        </div>
-        {React.Children.map(node.props.children, child => (
-            <div style={styles.children}>
-                <Node>{child}</Node>
+export const WithChildren = ({name, children: node, ...unused}) => {
+    const children = Array.isArray(node.props.children) ? node.props.children : [node.props.children]
+    return (
+        <div {...unused}>
+            <div>
+                <LessThan/>
+                {name}
+                <Props>{node}</Props>
+                <GreaterThan/>
             </div>
-        ))}
-        <div>
-            <LessThan/>
-            /
-            {name}
-            <GreaterThan/>
+            {children.map((child, i) => (
+                <div style={styles.children} key={i}>
+                    <Node>{child}</Node>
+                </div>
+            ))}
+            <div>
+                <LessThan/>
+                /
+                {name}
+                <GreaterThan/>
+            </div>
         </div>
-    </div>
-)
+    )
+}
 
 export const NoChildren = ({name, children: node, ...unused}) => (
     <div {...unused}>
@@ -39,18 +43,12 @@ export const NoChildren = ({name, children: node, ...unused}) => (
     </div>
 )
 
-export const Text = ({children: node, ...unused}) => (
-    <div {...unused}>
-        {node}
-    </div>
-)
-
 // if the element is a
 const Node = ({children: node, style, ...unused}) => {
     // if we couldn't find the element name
     if (!node.type) {
-        // then its just text
-        return <Text>{node}</Text>
+        // then its just PropValue
+        return <PropValue>{node}</PropValue>
     }
     // the name of the node
     const name = node.type.name || node.type.displayName || node.type
@@ -62,14 +60,14 @@ const Node = ({children: node, style, ...unused}) => {
 
     // if we couldn't find the element name
     if (!name) {
-        // then its just text
+        // then its just PropValue
         return (
-            <Text
+            <PropValue
                 style={componentStyle}
                 {...unused}
             >
                 {node}
-            </Text>
+            </PropValue>
         )
     }
 
