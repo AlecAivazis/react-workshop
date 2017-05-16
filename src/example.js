@@ -29,28 +29,9 @@ export default function ExampleWorkbench() {
                             hello
                         </Button>
                     </Example>
-                    <Example title="disabled">
-                        <Button disabled={true}>
-                            hello
-                        </Button>
-                    </Example>
-                </Blueprint>
-                <Blueprint title="Icon" component={Button}>
-                    <Example title="default">
-                        <Icon/>
-                    </Example>
-                </Blueprint>
-            </Category>
-            <Category title="Other">
-                <Blueprint title="Button" component={Button}>
                     <Example title="default">
                         <Button>
-                            hello
-                        </Button>
-                    </Example>
-                    <Example title="disabled">
-                        <Button disabled={true}>
-                            hello
+                            {() => {}}
                         </Button>
                     </Example>
                 </Blueprint>

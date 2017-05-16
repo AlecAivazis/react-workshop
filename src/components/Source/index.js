@@ -7,7 +7,6 @@ import PropValue from '../PropValue'
 
 const LessThan = () => <span>&lt;</span>
 const GreaterThan = () => <span>&gt;</span>
-const Code = ({style, ...unused}) => <div style={{...styles.code, ...style}} />
 
 export const WithChildren = ({name, children: node, ...unused}) => {
     const children = Array.isArray(node.props.children) ? node.props.children : [node.props.children]
@@ -48,7 +47,7 @@ const Node = ({children: node, style, ...unused}) => {
     // if we couldn't find the element name
     if (!node.type) {
         // then its just PropValue
-        return <PropValue>{node}</PropValue>
+        return typeof node === 'string' ? <span>{node}</span> : <PropValue>{node}</PropValue>
     }
     // the name of the node
     const name = node.type.name || node.type.displayName || node.type
