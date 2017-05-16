@@ -27,6 +27,7 @@ const Props = ({children: node}) => {
 
     return (
         <span>
+            {' '}
             {propNames.map(name => (
                 <span style={styles.prop} key={name}>
                     <span style={styles.propName}>
