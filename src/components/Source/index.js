@@ -34,7 +34,7 @@ export const NoChildren = ({name, children: node, ...unused}) => (
     <div {...unused}>
         <LessThan/>
         {name}
-        \
+        /
         <GreaterThan/>
     </div>
 )
