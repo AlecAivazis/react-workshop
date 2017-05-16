@@ -10,6 +10,14 @@ const Button = ({...unused}) => (
 Button.propTypes = {
     children: PropTypes.string,
 }
+Button.defaultProps = {
+    children: "hello"
+}
+
+const Icon = () => <span>icon</span>
+Icon.propTypes = {
+    name: PropTypes.string,
+}
 
 export default function ExampleWorkbench() {
     return (
@@ -25,6 +33,30 @@ export default function ExampleWorkbench() {
                         <Button disabled={true}>
                             hello
                         </Button>
+                    </Example>
+                </Blueprint>
+                <Blueprint title="Icon" component={Button}>
+                    <Example title="default">
+                        <Icon/>
+                    </Example>
+                </Blueprint>
+            </Category>
+            <Category title="Other">
+                <Blueprint title="Button" component={Button}>
+                    <Example title="default">
+                        <Button>
+                            hello
+                        </Button>
+                    </Example>
+                    <Example title="disabled">
+                        <Button disabled={true}>
+                            hello
+                        </Button>
+                    </Example>
+                </Blueprint>
+                <Blueprint title="Icon" component={Button}>
+                    <Example title="default">
+                        <Icon/>
                     </Example>
                 </Blueprint>
             </Category>

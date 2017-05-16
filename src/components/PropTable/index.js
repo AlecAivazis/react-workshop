@@ -3,6 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // local imports
 import EmptyState from './Empty'
+import PropValue from '../PropValue'
 import styles from './styles'
 import getProperties from './get-properties'
 
@@ -35,7 +36,7 @@ const PropTable = ({children: component, style, ...unused}) => {
                         <td style={styles.element}>{prop.propName}</td>
                         <td style={styles.element}>{prop.propType || 'other'}</td>
                         <td style={styles.element}>{prop.required || 'no'}</td>
-                        <td style={styles.element}>{prop.defaultValue || '-'}</td>
+                        <td style={styles.element}><PropValue showBraces={false}>{prop.defaultValue || '-'}</PropValue></td>
                     </tr>
                 ))}
             </tbody>

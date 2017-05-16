@@ -3,6 +3,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const contentForValue = val => {
+    // the maximum number of elements to show in a single element
+    const max = 3
+
     // what is shown depends on the values type
     let content
 
@@ -20,8 +23,6 @@ const contentForValue = val => {
 
     // array
     } else if (Array.isArray(val)) {
-        // the maximum number of elements to show in a list
-        const max = 3
 
         content = (
             <span>
