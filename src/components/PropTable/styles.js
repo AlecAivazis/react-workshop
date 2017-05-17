@@ -1,5 +1,5 @@
 // local imports
-import { monospaceFont, primaryFont } from 'styles'
+import { monospaceFont, primaryFont } from '../../styles'
 import { subheader } from '../Blueprint/styles'
 
 export default {

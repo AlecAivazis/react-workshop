@@ -1,4 +1,4 @@
-import { blue400 } from 'styles'
+import { blue400 } from '../../styles'
 
 const blueprint = {
     marginBottom: 12,

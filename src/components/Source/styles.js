@@ -1,4 +1,4 @@
-import { monospaceFont } from 'styles'
+import { monospaceFont } from '../../styles'
 
 export default {
     children: {

@@ -12,9 +12,6 @@ var entry = [projectPaths.clientEntry]
 
 // the initial set of plugins
 var plugins = [
-    new HtmlWebpackPlugin({
-        template: 'src/example.html'
-    }),
     new webpack.NamedModulesPlugin(),
     new webpack.EnvironmentPlugin({
       NODE_ENV: process.env.NODE_ENV || 'dev',

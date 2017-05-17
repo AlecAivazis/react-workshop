@@ -1,4 +1,4 @@
-import { primaryFont, grey800 } from 'styles'
+import { primaryFont, grey800 } from '../../styles'
 
 export const subheader = {
     fontSize: 18,

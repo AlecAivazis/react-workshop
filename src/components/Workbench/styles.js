@@ -1,4 +1,4 @@
-import { grey100, grey800, white, primaryFont } from 'styles'
+import { grey100, grey800, white, primaryFont } from '../../styles'
 
 export default {
     container: {
