@@ -5,7 +5,7 @@ import { mount } from 'enzyme'
 import { Workbench, Category, Example } from '..'
 import findCategories from './find-categories'
 
-describe('Workbench', function() {
+describe('Workshop', function() {
     describe('findCategories', () => {
         test('can find the categories in a workbench of one', () => {
             // a component to test with

@@ -1,7 +1,7 @@
 // external imports
 import React from 'react'
 // local imports
-import { PropValue } from 'components'
+import PropValue from '../PropValue'
 import styles from './styles'
 
 const Props = ({children: node}) => {
