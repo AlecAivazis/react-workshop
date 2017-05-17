@@ -20,7 +20,6 @@ module.exports = {
     clientEntry: entryPath,
     // built files
     clientBuild: buildPath,
-    indexTemplate: indexTemplate,
     // globs
     clientBuildGlob: path.join(clientBuild, '*'),
     testGlob: path.join(sourceDir, "**", "*test.js"),
