@@ -1,5 +1,5 @@
 {
-  "name": "react-workbench",
+  "name": "react-workshop",
   "version": "0.0.0",
   "description": "An environment for testing and building react components.",
   "main": "build/index.js",
