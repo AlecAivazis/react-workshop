@@ -8,21 +8,18 @@ var path = require('path')
 
 var rootDir = path.join(__dirname, '..')
 var configDir = path.join(rootDir, 'config')
-var buildDir = path.join(rootDir, 'build')
 var sourceDir = path.join(rootDir, 'src')
-var clientEntry = path.join(sourceDir, 'index.js')
-var clientBuild = path.join(buildDir, 'client.js')
-var indexTemplate = path.join(sourceDir, 'index.html')
+var entryPath = path.join(sourceDir, 'index.js')
+var buildPath = path.join(rootDir, 'index.js')
 
 module.exports = {
     // directories
     rootDir: rootDir,
     sourceDir: sourceDir,
-    buildDir: buildDir,
     // entry points
-    clientEntry: clientEntry,
+    clientEntry: entryPath,
     // built files
-    clientBuild: clientBuild,
+    clientBuild: buildPath,
     indexTemplate: indexTemplate,
     // globs
     clientBuildGlob: path.join(clientBuild, '*'),

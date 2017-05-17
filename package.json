@@ -9,7 +9,7 @@
     "build:prod": "NODE_ENV=production npm run build",
     "build:lib": "babel src --out-dir lib",
     "build:all": "npm run build && npm run build:prod && npm run build:lib",
-    "clean": "rm -rf react.* index.* lib/",
+    "clean": "rm -rf index.* lib/",
     "dev": "NODE_ENV=dev webpack-dev-server --inline --hot --config  example/webpack.js",
     "prepublish": "npm run build:all",
     "test": "NODE_ENV=test jest",
