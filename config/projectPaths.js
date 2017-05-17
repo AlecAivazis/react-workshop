@@ -13,17 +13,10 @@ var entryPath = path.join(sourceDir, 'index.js')
 var buildPath = path.join(rootDir, 'index.js')
 
 module.exports = {
-    // directories
     rootDir: rootDir,
     sourceDir: sourceDir,
-    // entry points
-    clientEntry: entryPath,
-    // built files
-    clientBuild: buildPath,
-    // globs
-    clientBuildGlob: path.join(clientBuild, '*'),
-    testGlob: path.join(sourceDir, "**", "*test.js"),
-    // configuration files
+    entry: entryPath,
+    build: buildPath,
     webpackConfig: path.join(configDir, 'webpack.js'),
     babelConfig: path.join(configDir, 'babel.json'),
 }

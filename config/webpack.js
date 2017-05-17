@@ -1,6 +1,7 @@
 // webpack imports
 var webpack = require('webpack')
 var process = require('process')
+var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 // local imports
 var projectPaths = require('./projectPaths')
@@ -8,7 +9,9 @@ var projectPaths = require('./projectPaths')
 // default to using development configuration
 var devtool = ''
 
-var entry = [projectPaths.clientEntry]
+var entry = [projectPaths.entry]
+
+const { dir: buildDir, base: buildName } = path.parse(projectPaths.build)
 
 // the initial set of plugins
 var plugins = [
@@ -52,8 +55,8 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
     entry: entry,
     output: {
-        path: projectPaths.buildDir,
-        filename: 'client.js',
+        path: buildDir,
+        filename: buildName,
     },
     module: {
         rules: [
