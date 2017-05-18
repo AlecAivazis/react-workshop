@@ -11,7 +11,6 @@ class Blueprint extends React.Component {
     }
 
     componentDidMount() {
-        console.log('registering')
         this.props.register({
             title: this.context.categoryTitle,
             blueprint: this,

@@ -1,7 +1,7 @@
 // external imports
 import React from 'react'
 // local imports
-import { addBlueprint } from './creators'
+import { addBlueprint, setFocus } from './creators'
 import { reducer } from '.'
 
 describe('Store', function() {
@@ -17,5 +17,19 @@ describe('Store', function() {
 
         // make sure the internal state is updated
         expect(state.blueprints).toEqual([bp])
+    })
+
+    test('can set focus', () => {
+        // the blueprint to add
+        const focus = {
+            category: "hello",
+            blueprint: "hello",
+        }
+
+        // add the blueprint to a null state
+        const state = reducer(undefined, setFocus(focus))
+
+        // make sure the internal state is updated
+        expect(state.focus).toEqual(focus)
     })
 })
