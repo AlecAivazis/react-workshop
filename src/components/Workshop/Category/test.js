@@ -2,19 +2,19 @@
 import React from 'react'
 import { mount } from 'enzyme'
 // local imports
-import { Workbench, Category, Blueprint } from '..'
+import { Workshop, Category, Blueprint } from '../..'
 import CategoryTab from './Tab'
 
-describe('Workbench', function() {
-    test('shows a category tab for each category in the workbench', () => {
+describe('Workshop', function() {
+    test('shows a category tab for each category in the Workshop', () => {
         // a component to test with
         const component = mount(
-            <Workbench>
+            <Workshop>
                 <Category title="hello">
                     <Blueprint title="hello" />
                     <Blueprint title="hello" />
                 </Category>
-            </Workbench>
+            </Workshop>
         )
 
         // make sure there is the right number of category tabs

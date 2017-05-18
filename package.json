@@ -45,6 +45,7 @@
     "react-dom": "^15.5.4"
   },
   "jest": {
+    "testRegex": "(/src/.*test\\.js)$",
     "modulePaths": [
       "<rootDir>/src"
     ],

@@ -1,7 +1,7 @@
 // external imports
 import React from 'react'
 
-// findExample is responsiblie for retrieving the example component
+// findBlueptin is responsiblie for retrieving the blueprint component
 // that matches the current selection
 export default function findBlueprint(
     children,

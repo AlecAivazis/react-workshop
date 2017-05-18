@@ -2,22 +2,22 @@
 import React from 'react'
 import { mount } from 'enzyme'
 // local imports
-import { Workbench, Category, Example, Blueprint } from '..'
+import { Workshop, Category, Example, Blueprint } from '..'
 import findBlueprint from './find-blueprint'
 
-describe('Workbench', function() {
+describe('Workshop', function() {
     describe('findExample', () => {
-        test('can find the example in a workbench', () => {
+        test('can find the example in a Workshop', () => {
             // a component to test with
             const component = mount(
-                <Workbench>
+                <Workshop>
                     <Category title="C">
                         <Blueprint title="B">
                             <Example title="E1" children="hello" />
                             <Example title="E2" children="world" />
                         </Blueprint>
                     </Category>
-                </Workbench>
+                </Workshop>
             )
 
             // the selected example state
@@ -26,7 +26,7 @@ describe('Workbench', function() {
                 blueprint: 'B',
             }
 
-            // try to find the categories in the workbench
+            // try to find the categories in the Workshop
             const example = findBlueprint(
                 component.props().children,
                 selectedExample,

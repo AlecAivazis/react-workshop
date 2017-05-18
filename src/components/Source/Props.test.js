@@ -17,10 +17,9 @@ describe('Source', () => {
 
             // make sure there is something resembling the prop string
             expect(wrapper.text()).toContain('hover=<PropValue />')
-            // make sure there is a prop value component
-            const value = wrapper.find(PropValue)
+
             // with the right value
-            expect(value.props().children).toBeTruthy()
+            expect(wrapper.find(PropValue).props().children).toBeTruthy()
         })
 
         test('doesn\'t show an entry for children', () => {

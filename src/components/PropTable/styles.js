@@ -1,6 +1,6 @@
 // local imports
 import { monospaceFont, primaryFont } from '../../styles'
-import { subheader } from '../Blueprint/styles'
+import { subheader } from '../Workshop/Blueprint/styles'
 
 export default {
     table: {

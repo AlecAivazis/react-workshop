@@ -19,28 +19,32 @@ Icon.propTypes = {
     name: PropTypes.string,
 }
 
+const FormCategory = () => (
+    <Category title="Form">
+        <Blueprint title="Button" component={Button}>
+            <Example title="default">
+                <Button>
+                    hello
+                </Button>
+            </Example>
+            <Example title="default">
+                <Button>
+                    hello
+                </Button>
+            </Example>
+        </Blueprint>
+        <Blueprint title="Icon" component={Button}>
+            <Example title="default">
+                <Icon/>
+            </Example>
+        </Blueprint>
+    </Category>
+)
+
 export default function ExampleWorkshop() {
     return (
         <Workshop>
-            <Category title="Form">
-                <Blueprint title="Button" component={Button}>
-                    <Example title="default">
-                        <Button>
-                            hello
-                        </Button>
-                    </Example>
-                    <Example title="default">
-                        <Button>
-                            {() => {}}
-                        </Button>
-                    </Example>
-                </Blueprint>
-                <Blueprint title="Icon" component={Button}>
-                    <Example title="default">
-                        <Icon/>
-                    </Example>
-                </Blueprint>
-            </Category>
+            <FormCategory />
         </Workshop>
     )
 }
