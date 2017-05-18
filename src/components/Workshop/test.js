@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { mount } from 'enzyme'
 // local imports
 import { Workshop, Category, Blueprint, Provider } from '..'
+import LocalCategory from './Category'
 
 describe('Workshop', function() {
     test('shows a category tab for each category in the Workshop', () => {
@@ -22,7 +23,7 @@ describe('Workshop', function() {
         )
 
         // make sure there is the right number of category tabs
-        expect(component.find(Category)).toHaveLength(2)
+        expect(component.find(LocalCategory)).toHaveLength(2)
     })
 
     test('shows the correct blueprint given the current selection', () => {
