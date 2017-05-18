@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // local imports
-import { Example, Blueprint, Workbench, Category } from './components'
+import { Example, Blueprint, Workshop, Category } from '../src'
 
 const Button = ({...unused}) => (
     <div style={{width: 100, backgroundColor: 'green', height: 50}} {...unused} />
@@ -19,9 +19,9 @@ Icon.propTypes = {
     name: PropTypes.string,
 }
 
-export default function ExampleWorkbench() {
+export default function ExampleWorkshop() {
     return (
-        <Workbench>
+        <Workshop>
             <Category title="Form">
                 <Blueprint title="Button" component={Button}>
                     <Example title="default">
@@ -41,6 +41,6 @@ export default function ExampleWorkbench() {
                     </Example>
                 </Blueprint>
             </Category>
-        </Workbench>
+        </Workshop>
     )
 }

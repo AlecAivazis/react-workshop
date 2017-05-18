@@ -63,7 +63,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
-                include: projectPaths.sourceDir
+                exclude: /node_modules/,
             }, {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],

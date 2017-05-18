@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import styles from './styles'
 import CategoryTab from './Tab'
 import Blueprint from '../Blueprint'
-
+console.log('hello')
 const Category = ({ title, blueprints, setFocus, selectedState }) => {
     // wether or not the category is selected
     const categorySelected = selectedState.category === title
