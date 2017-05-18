@@ -33,7 +33,7 @@ const FormCategory = () => (
                 </Button>
             </Example>
         </Blueprint>
-        <Blueprint title="Icon" component={Button}>
+        <Blueprint title="Icon" component={Icon}>
             <Example title="default">
                 <Icon/>
             </Example>

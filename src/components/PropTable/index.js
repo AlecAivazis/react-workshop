@@ -36,7 +36,9 @@ const PropTable = ({children: component, style, ...unused}) => {
                         <td style={styles.element}>{prop.propName}</td>
                         <td style={styles.element}>{prop.propType || 'other'}</td>
                         <td style={styles.element}>{prop.required || 'no'}</td>
-                        <td style={styles.element}><PropValue showBraces={false}>{prop.defaultValue || '-'}</PropValue></td>
+                        <td style={styles.element}>
+                            {prop.defaultValue ? <PropValue showBraces={false}>{prop.defaultValue}</PropValue> : '-'}
+                        </td>
                     </tr>
                 ))}
             </tbody>
