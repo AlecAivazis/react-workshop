@@ -1,15 +1,17 @@
 // external imports
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+// local imports
+import { addBlueprint } from '../../store'
 
 class Blueprint extends React.Component {
     static contextTypes = {
-        registerBlueprint: PropTypes.func.isRequired,
         categoryTitle: PropTypes.string.isRequired,
     }
 
     componentDidMount() {
-        this.context.registerBlueprint({
+        this.props.register({
             title: this.context.categoryTitle,
             blueprint: this,
         })
@@ -19,4 +21,9 @@ class Blueprint extends React.Component {
         return null
     }
 }
-export default Blueprint
+
+const mapDispatchToProps = dispatch => ({
+    register: bp => dispatch(addBlueprint(bp))
+})
+
+export default connect(null, mapDispatchToProps)(Blueprint)

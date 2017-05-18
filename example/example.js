@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // local imports
-import { Example, Blueprint, Workshop, Category } from '../src'
+import { Example, Blueprint, Workshop, Category, Provider } from '../src'
 
 const Button = ({...unused}) => (
     <div style={{width: 100, backgroundColor: 'green', height: 50}} {...unused} />
@@ -43,8 +43,10 @@ const FormCategory = () => (
 
 export default function ExampleWorkshop() {
     return (
-        <Workshop>
-            <FormCategory />
-        </Workshop>
+        <Provider>
+            <Workshop>
+                <FormCategory />
+            </Workshop>
+        </Provider>
     )
 }
