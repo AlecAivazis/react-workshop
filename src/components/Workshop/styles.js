@@ -16,7 +16,7 @@ export default {
         color: white,
         ...primaryFont
     },
-    workbench: {
+    workshop: {
         display: 'flex',
         flexDirection: 'column',
         flexGrow: 1,
