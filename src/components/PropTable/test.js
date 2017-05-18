@@ -55,7 +55,9 @@ describe('PropTable', function() {
         // find the row with a required field
         expect(wrapper.find('tbody > tr').filterWhere(
             // we can assume the default column is fourth
-            ele => ele.childAt(3).text() === 'hello'
+            ele => {
+                return ele.childAt(3).text() === '"hello"'
+            }
         // there should be one required row
         )).toHaveLength(1)
     })

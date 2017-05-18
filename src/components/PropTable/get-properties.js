@@ -33,7 +33,6 @@ export default component => {
             required: prop.isRequired === undefined ? 'yes' : 'no',
         }
     }
-
     // if there are default props declared for the component
     if (component.defaultProps) {
         // for each default value

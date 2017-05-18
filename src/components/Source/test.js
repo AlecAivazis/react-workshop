@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { mount } from 'enzyme'
 // local imports
 import Source, {Text, WithChildren, NoChildren} from '.'
+import PropValue from '../PropValue'
 
 describe('Source', function() {
     test('can render source for text', () => {

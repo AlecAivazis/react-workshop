@@ -42,12 +42,14 @@ export const NoChildren = ({name, children: node, ...unused}) => (
     </div>
 )
 
+export const Text = ({children}) => <span>{children}</span>
+
 // if the element is a
 const Node = ({children: node, style, ...unused}) => {
     // if we couldn't find the element name
     if (!node.type) {
         // then its just PropValue
-        return typeof node === 'string' ? <span>{node}</span> : <PropValue>{node}</PropValue>
+        return typeof node === 'string' ? <Text>{node}</Text> : <PropValue>{node}</PropValue>
     }
     // the name of the node
     const name = node.type.name || node.type.displayName || node.type
@@ -56,7 +58,6 @@ const Node = ({children: node, style, ...unused}) => {
         ...styles.code,
         ...style,
     }
-
     // if we couldn't find the element name
     if (!name) {
         // then its just PropValue
