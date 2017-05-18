@@ -27,7 +27,6 @@ describe('Workshop', function() {
         class Child extends React.Component {
             componentWillMount() {
                 // call the category registration
-                console.log(this.context)
                 this.context.registerBlueprint('hello')
             }
 

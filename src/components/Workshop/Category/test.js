@@ -10,9 +10,9 @@ describe('Workshop', function() {
         // a component to test with
         const component = mount(
             <Workshop>
-                <Category title="hello">
-                    <Blueprint title="hello" />
-                    <Blueprint title="hello" />
+                <Category title="category">
+                    <Blueprint title="bp1" />
+                    <Blueprint title="bp2" />
                 </Category>
             </Workshop>
         )
