@@ -6,6 +6,7 @@ import { mount } from 'enzyme'
 import { Workshop, Category, Blueprint, Provider } from '..'
 import store, { setFocus } from '../../store'
 import LocalCategory from './Category'
+import LocalBlueprint from './Blueprint'
 
 describe('Workshop', function() {
     test('shows a category tab for each category in the Workshop', () => {
@@ -36,8 +37,8 @@ describe('Workshop', function() {
         const component = mount(
             <Provider>
                 <Workshop>
-                    <Category title="hello">
-                        <Blueprint title="hello">
+                    <Category title="hello1">
+                        <Blueprint title="helloA">
                             <Child/>
                         </Blueprint>
                     </Category>
@@ -50,11 +51,14 @@ describe('Workshop', function() {
 
         // select the blueprint with the child component
         store.dispatch(setFocus({
-            category: "hello",
-            blueprint: "hello",
+            category: "hello1",
+            blueprint: "helloA",
         }))
 
         // there should be a child
-        expect(component.find(Child)).toHaveLength(1)
+        const selected = component.find(LocalBlueprint)
+        // make sure it's what we expect
+        expect(selected).toHaveLength(1)
+        expect(selected.props().title).toEqual("helloA")
     })
 })
