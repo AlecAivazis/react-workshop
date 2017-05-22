@@ -12,13 +12,17 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         flexGrow: 1,
-        overflowY: 'auto',
+        flexShrink: 0,
     },
     title: {
        ...primaryFont,
        margin: 0,
        marginBottom: 20,
        color: grey800,
+    },
+    flexContainer: {
+        display: 'flex',
+        flexDirection: 'column',
     },
     subheader,
 }

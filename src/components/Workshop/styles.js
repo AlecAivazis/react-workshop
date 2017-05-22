@@ -20,6 +20,7 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         flexGrow: 1,
-        overflow: 'hidden',
+        overflowX: 'hidden',
+        overflowY: 'scroll',
     }
 }
