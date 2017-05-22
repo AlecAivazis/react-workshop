@@ -67,4 +67,21 @@ describe('Source', function() {
         // and one node without children
         expect(wrapper.find(NoChildren)).toHaveLength(1)
     })
+
+    test('renders the source for multiple elements', () => {
+
+        // mount the source wrapper
+        const wrapper = mount(
+            <Source>
+                <div>hello</div>
+                <div>hello</div>
+                <div>hello</div>
+            </Source>
+        )
+
+        // there are 3 nodes with children (each div has a child)
+        expect(wrapper.find(WithChildren)).toHaveLength(3)
+        // two text nodes
+        expect(wrapper.find(Text)).toHaveLength(3)
+    })
 })

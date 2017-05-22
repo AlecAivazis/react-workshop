@@ -97,4 +97,8 @@ const Node = ({children: node, style, ...unused}) => {
     )
 }
 
-export default Node
+export default ({ children, ...unused }) => (
+    <div {...unused}>
+        {React.Children.map(children, child => <Node>{child}</Node>)}
+    </div>
+)
