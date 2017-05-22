@@ -1,6 +1,6 @@
 {
   "name": "react-workshop",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "An environment for testing and building react components.",
   "main": "build/index.js",
   "module": "lib/index.js",
