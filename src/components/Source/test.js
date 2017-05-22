@@ -66,6 +66,35 @@ describe('Source', function() {
         expect(wrapper.find(Text)).toHaveLength(2)
         // and one node without children
         expect(wrapper.find(NoChildren)).toHaveLength(1)
+
+        expect(wrapper.find(NoChildren).props().children.props.onClick).toBeTruthy()
+    })
+
+    test('can render very deep tree', () => {
+        // an element with children
+        const element = (
+            <div>
+                <div prop={true}>
+                    <div>
+                        <div>
+                            hello
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+
+        // mount the source wrapper
+        const wrapper = mount(
+            <Source>
+                {element}
+            </Source>
+        )
+
+        // there are 3 nodes with children (each div has a child)
+        expect(wrapper.find(WithChildren)).toHaveLength(4)
+        // one text node
+        expect(wrapper.find(Text)).toHaveLength(1)
     })
 
     test('renders the source for multiple elements', () => {

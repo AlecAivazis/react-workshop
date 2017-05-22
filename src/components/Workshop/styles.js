@@ -4,7 +4,6 @@ export default {
     container: {
         display: 'flex',
         flexGrow: 1,
-        backgroundColor: grey100
     },
     tabContainer: {
         display: 'flex',
