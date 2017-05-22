@@ -31,6 +31,14 @@ describe('Source', () => {
             expect(wrapper.text()).toContain("{true}")
         })
 
+        test('renders false correctly', () => {
+            const wrapper = shallow(
+                <PropValue>{false}</PropValue>
+            )
+
+            expect(wrapper.text()).toContain("{false}")
+        })
+
         test('renders anonymous functions correctly', () => {
             const wrapper = shallow(
                 <PropValue>{() => {}}</PropValue>

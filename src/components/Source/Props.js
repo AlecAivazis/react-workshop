@@ -13,6 +13,7 @@ const Props = ({children: node}) => {
         return null
     }
 
+
     // pull out the necessary metadata from the node
     const { props, type } = node
     const { defaultProps } = type
@@ -22,7 +23,7 @@ const Props = ({children: node}) => {
         prop =>
             prop[0] !== '_' &&
             prop !== 'children' &&
-            (!defaultProps || props[prop] != defaultProps[prop])
+            (!defaultProps || props[prop] !== defaultProps[prop])
     )
 
     return (

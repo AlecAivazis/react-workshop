@@ -61,6 +61,28 @@ describe('PropTable', function() {
         // there should be one required row
         )).toHaveLength(1)
     })
+
+    test('shows default values when boolean is false', () => {
+        // a component to test with
+        const Component = () => <span/>
+        Component.propTypes = {
+            val: PropTypes.bool,
+        }
+        Component.defaultProps = {
+            val: false
+        }
+
+        // render the prop table for the component
+        const componentWrapper = mount(<PropTable>{Component}</PropTable>)
+
+
+        // find the row with a required field
+        expect(componentWrapper.find('tbody > tr').filterWhere(
+            // we can assume the default column is fourth
+            ele => ele.childAt(3).text().includes('false')
+        // there should be one required row
+        )).toHaveLength(1)
+    })
 })
 
 // a list of primitive types
