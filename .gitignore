@@ -1,4 +1,4 @@
-node_modules/
-lib/
-build/
-index.js
+/node_modules/
+/lib/
+/build/
+/index.js
